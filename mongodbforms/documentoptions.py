@@ -190,7 +190,10 @@ class DocumentMetaWrapper(object):
             
     def __getitem__(self, key):
         return self._meta[key]
-    
+
+    def __iter__(self):
+        return self._meta.__iter__()
+
     def get(self, key, default=None):
         try:
             return self.__getitem__(key)
